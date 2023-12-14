@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/assets/sass/main.css">
+</head>
+
+<body>
+    <form hx-post="/api/login" hx-replace-url="true">
+        <div class="field">
+            <label class="label">Benutzername <br>
+                <i>(für Login - Dieser Name wird entweder auf dem Infoscreen gezeigt, oder
+                    aufgerufen. Daher können Leute
+                    mit unpassenden Namen nicht gewinnen.)</i></label>
+            <!-- TODO HTMX -->
+            <div class="control has-icons-left">
+                <input id="username" type="text" name="username" placeholder="Benutzername" required />
+                <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                </span>
+            </div>
+            <!-- TODO HTMX -->
+            <p class="help is-danger">This email is invalid</p>
+        </div>
+
+        <div class="field">
+            <label class="label">Passwort</label>
+            <!-- TODO HTMX -->
+            <div class="control has-icons-left">
+                <input id="password" name="password" type="password" class="validate" placeholder="Passwort" required />
+                <span class="icon is-small is-left">
+                    <i class="fa-solid fa-key"></i>
+                </span>
+            </div>
+        </div>
+
+
+        <!-- TODO eher was für Regestrierung -->
+        <div class="field">
+            <label class="label">Jahrgang</label>
+            <div class="control">
+                <div class="select">
+                    <select>
+                        <option>Wähle deine Klasse</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13 (für Zukunft)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="field is-grouped">
+            <div class="control">
+                <button class="button is-link" type="submit">Submit</button>
+            </div>
+            <div class="control">
+                <button class="button is-link is-light">Cancel</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
