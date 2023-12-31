@@ -5,13 +5,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ title }}</title>
+    <title>example.md</title>
     <link rel="stylesheet" href="/assets/sass/main.css">
 </head>
 
 <body>
-    <h1>{{ title }}</h1>
-    {{ body }}
+    <h1>example.md</h1>
+    <p>---#WOHOWTOLL was<img src='https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png' alt='OpenAI Logo' /></p>
+
 </body>
 
 <!-- <body>
@@ -47,4 +48,4 @@
 </body>
 -->
 
-</html>
+</html>

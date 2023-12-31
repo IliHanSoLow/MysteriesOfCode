@@ -1,13 +1,20 @@
 use crate::{
     tasks::homer,
-    templates::{BlumaTest, Home, Login},
+    templates::{Home, Login, Main, F04},
 };
 use askama_axum::IntoResponse;
 
-pub(crate) async fn home() -> Home {
-    Home {
-        task_string: homer(),
+// Handlers are called by the router
+
+pub(crate) async fn home() -> String {
+    Main {
+        body: Home {
+            task_string: homer(),
+        }
+        .to_string(),
+        title: "Mysteries of Code".to_string(),
     }
+    .to_string()
 }
 
 pub(crate) async fn login() -> Login {
@@ -18,6 +25,10 @@ pub(crate) async fn login_process() -> String {
     "test".to_string()
 }
 
-pub(crate) async fn bluma_test() -> BlumaTest {
-    BlumaTest {}
+pub(crate) async fn handle_404() -> F04 {
+    F04 {}
+}
+
+pub(crate) async fn stylize(title: String, body: String) -> String {
+    Main { body, title }.to_string()
 }

@@ -22,7 +22,7 @@ impl Tasks {
 pub(crate) struct Task {
     title: String,
     description: String,
-    url: Url,
+    url: String,
     release_date: DateTime<Utc>,
 }
 
@@ -30,7 +30,7 @@ impl Task {
     pub(crate) fn new(
         title: String,
         description: String,
-        url: Url,
+        url: String,
         release_date_ymd: (i32, u32, u32),
     ) -> Self {
         let (y, m, d) = release_date_ymd;
@@ -53,10 +53,7 @@ pub(crate) fn homer() -> String {
         if i.release_date <= Utc::now() {
             table = format!(
                 "{}\n <tr><th><a href=\"{}\">{}</a></th><th>{}</th></tr>",
-                table,
-                i.url.to_string(),
-                i.title,
-                i.description,
+                table, i.url, i.title, i.description,
             );
         }
     }
