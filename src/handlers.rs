@@ -3,18 +3,21 @@ use crate::{
     templates::{Home, Login, Main, F04},
 };
 use askama_axum::IntoResponse;
+use axum::response::Html;
 
 // Handlers are called by the router
 
-pub(crate) async fn home() -> String {
-    Main {
-        body: Home {
-            task_string: homer(),
+pub(crate) async fn home() -> Html<String> {
+    Html(
+        Main {
+            body: Home {
+                task_string: homer(),
+            }
+            .to_string(),
+            title: "Mysteries of Code".to_string(),
         }
         .to_string(),
-        title: "Mysteries of Code".to_string(),
-    }
-    .to_string()
+    )
 }
 
 pub(crate) async fn login() -> Login {
